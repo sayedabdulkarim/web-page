@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/head %>
+  
+</head>
+<body>
+    <% include partials/header %>
+
+    <div id="hero-image">
+      <div id="hero-title"><%= title%></div>
+    </div>
+
+    <div id="posters-wrapper" class="content-padding clearfix">
+
+      <% movies.map(movie => { %>
+        <div class="poster">
+
+          <a href="/episode/<%= movie.episode_number%>">
+              <img src="/images/<%= movie.poster%>" class="img-responsive">
+    
+              <div class="poster-info-overlay">
+                <h3><%= movie.title%></h3>
+                <h4>View More <i class="fa fa-arrow-right"></i></h4>
+              </div>
+          </a>
+
+        </div>
+      <% }) %>
+    
+    </div>
+
+
+  <% include partials/footer %>
+
+  <% include partials/script %>
+</body>
+</html>
